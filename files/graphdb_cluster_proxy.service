@@ -1,0 +1,17 @@
+[Unit]
+Description="GraphDB Cluster Proxy"
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Restart=on-failure
+RestartSec=5s
+User=graphdb
+Group=graphdb
+EnvironmentFile=/etc/graphdb/graphdb_cluster_proxy.env
+ExecStart="/opt/graphdb/bin/cluster-proxy"
+TimeoutSec=120
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target

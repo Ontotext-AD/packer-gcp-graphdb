@@ -1,0 +1,39 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  PACKER_VERSION: "1.11.1"
+
+jobs:
+  analyze:
+    name: Analyze the Packer scripts
+    runs-on: ubuntu-22.04
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - id: clone_repository
+        name: Clone repository
+        # actions/checkout@v4.1.1
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+
+      - id: setup_packer_cli
+        name: Setup Packer CLI
+        # hashicorp/setup-packer@v3.1.0
+        uses: hashicorp/setup-packer@1aa358be5cf73883762b302a3a03abd66e75b232
+        with:
+          version: "${{ env.PACKER_VERSION }}"
+
+      - name: Run Packer init
+        run: packer init .
+
+      - name: Run Packer format check
+        run: packer fmt -check -recursive .
+
+      - name: Run Packer validate check
+        run: packer validate -syntax-only .
