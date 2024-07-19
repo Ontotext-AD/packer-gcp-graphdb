@@ -1,0 +1,17 @@
+# See https://cloud.google.com/stackdriver/docs/solutions/agents/ops-agent/otlp
+combined:
+  receivers:
+    otlp:
+      type: otlp
+      grpc_endpoint: 127.0.0.1:4317
+      metrics_mode: googlecloudmonitoring
+metrics:
+  service:
+    pipelines:
+      otlp:
+        receivers: [otlp]
+traces:
+  service:
+    pipelines:
+      otlp:
+        receivers: [otlp]
