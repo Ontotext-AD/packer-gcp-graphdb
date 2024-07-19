@@ -5,7 +5,7 @@ for [Google Cloud](https://cloud.google.com/).
 
 ## About GraphDB
 
-<p style="text-align: center">
+<p align="center">
   <a href="https://www.ontotext.com/products/graphdb/">
     <picture>
       <img src="https://www.ontotext.com/wp-content/uploads/2022/09/Logo-GraphDB.svg" alt="GraphDB logo" title="GraphDB" height="75">
