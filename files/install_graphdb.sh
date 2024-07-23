@@ -70,6 +70,7 @@ mv graphdb-"${GRAPHDB_VERSION}" /opt/graphdb-"${GRAPHDB_VERSION}"
 ln -s /opt/graphdb-"${GRAPHDB_VERSION}" /opt/graphdb
 
 mv /tmp/graphdb.env /etc/graphdb/graphdb.env
+mv /tmp/graphdb-cluster-proxy.env /etc/graphdb-cluster-proxy/graphdb-cluster-proxy.env
 
 chown -R graphdb:graphdb /etc/graphdb \
                          /etc/graphdb-cluster-proxy \
@@ -78,7 +79,7 @@ chown -R graphdb:graphdb /etc/graphdb \
                          /var/opt/graphdb
 
 mv /tmp/graphdb.service /lib/systemd/system/graphdb.service
-mv /tmp/graphdb_cluster_proxy.service /lib/systemd/system/graphdb_cluster_proxy.service
+mv /tmp/graphdb-cluster-proxy.service /lib/systemd/system/graphdb-cluster-proxy.service
 
 systemctl daemon-reload
 systemctl enable graphdb.service
