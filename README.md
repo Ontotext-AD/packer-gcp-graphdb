@@ -91,7 +91,7 @@ systemctl restart graphdb.service
 ## GraphDB Cluster Proxy
 
 By default, the VM will start only the GraphDB systemd service `graphdb.service` on port `7200`. The image has a second systemd service
-definition `graphdb_cluster_proxy.service` for a second GraphDB process in cluster proxy mode on port `7201`.
+definition `graphdb-cluster-proxy.service` for a second GraphDB process in cluster proxy mode on port `7201`.
 
 This proxy is used in the clustered setup of GraphDB, see https://graphdb.ontotext.com/documentation/10.7/cluster-basics.html for more
 information.
@@ -99,8 +99,8 @@ information.
 To start the cluster proxy process, use:
 
 ```shell
-systemctl enable graphdb_cluster_proxy.service
-systemctl start graphdb_cluster_proxy.service
+systemctl enable graphdb-cluster-proxy.service
+systemctl start graphdb-cluster-proxy.service
 ```
 
 ## Support

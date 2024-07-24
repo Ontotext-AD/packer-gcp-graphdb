@@ -8,8 +8,8 @@ build {
       "./files/google-cloud-ops-agent-config.yaml",
       "./files/graphdb.env",
       "./files/graphdb.service",
-      "./files/graphdb_cluster_proxy.env",
-      "./files/graphdb_cluster_proxy.service",
+      "./files/graphdb-cluster-proxy.env",
+      "./files/graphdb-cluster-proxy.service",
       "./files/install_graphdb.sh"
     ]
     destination = "/tmp/"
