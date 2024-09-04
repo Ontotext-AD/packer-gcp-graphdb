@@ -19,6 +19,7 @@ source "googlecompute" "ubuntu_x86_64" {
   image_storage_locations = var.image_storage_locations
   image_project_id        = var.image_project_id
   image_labels            = var.image_labels
+  image_licenses          = var.image_licenses
 
   # Build
   instance_name = "packer-${local.graphdb_image_name}"

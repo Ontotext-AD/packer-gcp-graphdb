@@ -58,6 +58,12 @@ variable "image_storage_locations" {
   default     = ["us-east1"]
 }
 
+variable "image_licenses" {
+  description = "Licenses to apply to the created VM image."
+  type        = list(string)
+  default     = []
+}
+
 # Build Variables
 
 variable "build_instance_type" {
