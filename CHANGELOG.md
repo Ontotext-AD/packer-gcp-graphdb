@@ -2,6 +2,10 @@
 
 All notable changes to the Packer configuration for creating GraphDB Google Cloud VM images will be documented in this file.
 
+## 1.1.1
+
+- Disabled the GraphDB JS plugin by default (GDB-11622)
+
 ## 1.1.0
 
 - Added `image_licenses` that will be used to associate the built VM image with Google's Marketplace VM license
