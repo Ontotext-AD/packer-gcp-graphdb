@@ -47,8 +47,14 @@ done
 
 echo "Installing tools and libraries...."
 
+# Temurin setup
+echo "deb [signed-by=/etc/apt/keyrings/adoptium.asc] https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print $2}' /etc/os-release) main" | tee /etc/apt/sources.list.d/adoptium.list
+mkdir -p /etc/apt/keyrings
+wget -O - https://packages.adoptium.net/artifactory/api/gpg/key/public | tee /etc/apt/keyrings/adoptium.asc
+
+# Install Tools
 apt-get update -qq
-apt-get install -qq -y bash-completion jq nvme-cli openjdk-11-jdk unzip > /dev/null
+apt-get install -qq -y bash-completion jq nvme-cli temurin-21-jdk unzip > /dev/null
 
 # --------------------------------------
 
