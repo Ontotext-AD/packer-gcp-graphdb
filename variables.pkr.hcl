@@ -29,7 +29,7 @@ variable "source_image" {
 variable "source_image_family" {
   description = "Name of the source image family used to select the base image when packaging GraphDB. Using this will always select the latest version of the source image in the used family."
   type        = string
-  default     = "ubuntu-2404-lts"
+  default     = "ubuntu-2404-lts-amd64"
 }
 
 # GraphDB Image Variables
